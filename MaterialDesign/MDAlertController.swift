@@ -64,10 +64,7 @@ public class MDAlertController: UIViewController {
 		self.addAction(actionOK)
 		self._didAddCustomAction = false
 		self.modalPresentationStyle = .Custom
-		// -------------------------------------------------------------------------------------------------------------------------------------
-		// WARNING: Uncomment next time and replace "RootVCType" with your root view controller type. Then setup your root view controller's "animationControllerForPresentedController" and "animationControllerForDismissedController" to return an instance of MDAlertAnimator.
-//		self.transitioningDelegate = UIApplication.sharedApplication().windows[0].rootViewController as! <#RootVCType#>
-		// -------------------------------------------------------------------------------------------------------------------------------------
+		self.transitioningDelegate = MDAlertTransitioningDelegate()
 	}
 	// -------------------------------------------------------------------------------------------------------------------------------------
 
@@ -286,4 +283,15 @@ public class MDAlertController: UIViewController {
 //			"buttonOutlineView": self.buttonOutlineView
 //		]
 //	}
+}
+
+private class MDAlertTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+
+	@objc func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return MDAlertAnimator()
+	}
+
+	@objc func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return MDAlertAnimator()
+	}
 }
