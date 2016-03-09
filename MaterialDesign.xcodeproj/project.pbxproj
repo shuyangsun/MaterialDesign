@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		10796CE41C9095B3000332D8 /* MaterialDesign.h in Headers */ = {isa = PBXBuildFile; fileRef = 10796CE31C9095B3000332D8 /* MaterialDesign.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10796CF01C9095FE000332D8 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10796CEB1C9095FE000332D8 /* General.swift */; };
+		10796CF11C9095FE000332D8 /* MaterialDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10796CEC1C9095FE000332D8 /* MaterialDesign.swift */; };
+		10796CF21C9095FE000332D8 /* MDAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10796CED1C9095FE000332D8 /* MDAlertAction.swift */; };
+		10796CF31C9095FE000332D8 /* MDAlertAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10796CEE1C9095FE000332D8 /* MDAlertAnimator.swift */; };
+		10796CF41C9095FE000332D8 /* MDAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10796CEF1C9095FE000332D8 /* MDAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10796CE01C9095B3000332D8 /* MaterialDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaterialDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10796CE31C9095B3000332D8 /* MaterialDesign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialDesign.h; sourceTree = "<group>"; };
 		10796CE51C9095B3000332D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10796CEB1C9095FE000332D8 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		10796CEC1C9095FE000332D8 /* MaterialDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDesign.swift; sourceTree = "<group>"; };
+		10796CED1C9095FE000332D8 /* MDAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertAction.swift; sourceTree = "<group>"; };
+		10796CEE1C9095FE000332D8 /* MDAlertAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertAnimator.swift; sourceTree = "<group>"; };
+		10796CEF1C9095FE000332D8 /* MDAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +56,31 @@
 		10796CE21C9095B3000332D8 /* MaterialDesign */ = {
 			isa = PBXGroup;
 			children = (
-				10796CE31C9095B3000332D8 /* MaterialDesign.h */,
-				10796CE51C9095B3000332D8 /* Info.plist */,
+				10796CEC1C9095FE000332D8 /* MaterialDesign.swift */,
+				10796CF51C909604000332D8 /* Alert View Controller */,
+				10796CF61C909615000332D8 /* Supporting File */,
 			);
 			path = MaterialDesign;
+			sourceTree = "<group>";
+		};
+		10796CF51C909604000332D8 /* Alert View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10796CEB1C9095FE000332D8 /* General.swift */,
+				10796CED1C9095FE000332D8 /* MDAlertAction.swift */,
+				10796CEE1C9095FE000332D8 /* MDAlertAnimator.swift */,
+				10796CEF1C9095FE000332D8 /* MDAlertController.swift */,
+			);
+			name = "Alert View Controller";
+			sourceTree = "<group>";
+		};
+		10796CF61C909615000332D8 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+				10796CE51C9095B3000332D8 /* Info.plist */,
+				10796CE31C9095B3000332D8 /* MaterialDesign.h */,
+			);
+			name = "Supporting File";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10796CF31C9095FE000332D8 /* MDAlertAnimator.swift in Sources */,
+				10796CF11C9095FE000332D8 /* MaterialDesign.swift in Sources */,
+				10796CF21C9095FE000332D8 /* MDAlertAction.swift in Sources */,
+				10796CF01C9095FE000332D8 /* General.swift in Sources */,
+				10796CF41C9095FE000332D8 /* MDAlertController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +264,7 @@
 		10796CE91C9095B3000332D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +275,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = shuyangsun.MaterialDesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		10796CEA1C9095B3000332D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
